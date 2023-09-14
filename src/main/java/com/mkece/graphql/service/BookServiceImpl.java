@@ -42,7 +42,7 @@ public class BookServiceImpl implements BookService{
 
 
     @Override
-    public Book updateBook(Book updateBook) {
+    public Book updateBook(BookInput updateBook) {
         Optional<Book> existingBook = bookRepository.findById(updateBook.getId());
 
         if (existingBook.isPresent()) {
@@ -52,14 +52,13 @@ public class BookServiceImpl implements BookService{
             book.setDescription(updateBook.getDescription());
             book.setPrice(updateBook.getPrice());
             book.setPublisher(updateBook.getPublisher());
-            bookRepository.save(book);
+            return bookRepository.save(book);
         } else {
             // Handle the case when the book does not exist
             // You can throw an exception or handle it in any other appropriate way
             throw new RuntimeException(("Book not found: " + updateBook.getId()));
         }
 
-        return updateBook;
     }
 
 

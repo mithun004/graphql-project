@@ -35,8 +35,8 @@ public class BookController {
 
 
     @MutationMapping("updateBook")
-    public Book updateBook(@Argument  Book book){
-        return bookService.updateBook(book);
+    public Book updateBook(@Argument  BookInput bookInput){
+        return bookService.updateBook(bookInput);
     }
 
 

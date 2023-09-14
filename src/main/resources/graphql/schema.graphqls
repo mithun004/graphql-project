@@ -12,8 +12,8 @@ type Book {
 
 type Mutation {
 
-    createBook(book:BookInput) : Book
-    updateBook(book: BookInput) : Book
+    createBook(bookInput:BookInput) : Book
+    updateBook(bookInput: BookInput) : Book
     deleteBook(bookId : Int) : Boolean
 
 
@@ -27,7 +27,7 @@ type Query {
 
 
 input BookInput {
-
+    id: ID!
     author: String
     title: String
     description: String

@@ -20,7 +20,7 @@ public interface BookService {
     public List<Book> getallBooks();
 
     // update book
-    Book updateBook(Book book);
+    Book updateBook(BookInput bookInput);
 
     boolean deleteBook(int id);
 
