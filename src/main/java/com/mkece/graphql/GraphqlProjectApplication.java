@@ -47,6 +47,5 @@ public class GraphqlProjectApplication  implements CommandLineRunner {
 		book3.setPages(1200);
 		bookService.createbook(book3);
 
-
 	}
 }
